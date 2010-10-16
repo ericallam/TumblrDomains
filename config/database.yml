@@ -1,0 +1,12 @@
+development:
+  adapter: postgresql
+  database: tumblr_development
+  host: localhost
+  user: root
+
+test:
+  adapter: postgresql
+  database: tumblr_test
+  host: localhost
+  user: root
+
