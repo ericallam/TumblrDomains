@@ -27,4 +27,14 @@ module DomainChanger
     end
 
   end
+
+  class MockChanger < TumblrChanger
+    def change_to(*args)
+      true
+    end
+  end
+
+  def self.handler
+    @handler ||= TumblrChanger
+  end
 end
