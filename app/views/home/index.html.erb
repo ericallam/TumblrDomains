@@ -1,0 +1,75 @@
+<div id='step_container'>
+  <div id='step_1' class='step'>
+
+    <h3>Step 1: <span class='step_headline'>Check domain name availabilty</span> <span class='success' style='display:none'>✓</span></h3>
+
+    <div class='step_contents'>
+      <p class='error' style='display:none'>
+        Sorry, but <span id='domain_name_unavailable'></span> is not available.
+      </p>
+
+      <%= form_tag check_availability_path, :method => :get %>
+        <%= text_field_tag :domain_name, 'example.com', :id => 'domain_name' %>
+
+        <%= submit_tag 'Go' %>
+      </form>
+    </div>
+
+  </div>
+
+  <div id="step_2" class='step'>
+    <h3>Step 2: <span class='step_headline'>Authorize your tumblr blog</span> <span class='success' style='display:none'>✓</span></h3>
+    
+    <div class='step_contents' style='display:none'>
+      <%= form_tag registrations_path %>
+        <p class='error' style='display:none'>
+        </p>
+        
+        <p>
+          <%= label_tag :email, 'Tumblr Email' %>
+          <%= text_field_tag :email %>
+        </p>
+
+        <p>
+          <%= label_tag :password, 'Tumblr Password' %>
+          <%= password_field_tag :password %>
+        </p>
+
+        <%= hidden_field_tag :domain %>
+
+        <p>
+          <%= submit_tag 'Go' %>
+        </p>
+
+      </form>
+
+    </div>
+    
+    <div id="step_2_b" class='sub_step' style='display:none'>
+
+      <%= form_tag set_tumblelog_registrations_path %>
+      
+        <p>
+          <%= label_tag :tumblelog, 'Your Tumblr account has more than 1 blog.  Please choose one now' %>
+          <%= select_tag :tumblelog %>
+        </p>
+
+        <p>
+          <%= submit_tag 'Go' %>
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <div id="step_3" class='step'>
+    <h3>Step 3: Pay with Amazon.com</h3>
+
+    <div class='step_contents' style='display:none'>
+      Put amazon button here.
+    </div>
+  </div>
+
+</div

@@ -1,0 +1,25 @@
+<h3>Which tumblr blog would you like to use?</h3>
+
+<%= form_for @registration, :url => registrations_path do |form| %>
+  
+  <%= form.error_messages %>
+
+  <p>
+    <%= form.label :email, 'Tumblr Email' %>
+    <%= form.text_field :email %>
+  </p>
+
+  <p>
+    <%= form.label :password, 'Tumblr Password' %>
+    <%= form.password_field :password %>
+  </p>
+
+  <%= form.hidden_field :domain %>
+
+  <p>
+    <%= form.submit 'login to tumblr' %>
+  </p>
+
+<% end %>
+
+
