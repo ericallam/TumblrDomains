@@ -33,6 +33,7 @@ $(document).ready(function(){
         if(data['success']){
           $('#step_2_b').slideUp('fast');
           $('#step_3 .step_contents').slideDown('fast');
+          $('#payments_url').attr('href', data['payment_url'])
         }else{
         
         }

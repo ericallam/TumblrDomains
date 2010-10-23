@@ -15,6 +15,18 @@ class Registration < ActiveRecord::Base
     DomainChanger.handler.new(self.tumblelog, self.email, self.password).change_to(self.domain)
   end
 
+  def amount
+    BigDecimal.new("19.95")
+  end
+
+  def reference
+    "tumblr-#{id}"
+  end
+
+  def reason
+    "Register #{self.domain} for Tumblr #{self.tumblelog}"
+  end
+
   private
 
   def tumblr_login

@@ -36,7 +36,7 @@ class RegistrationsController < ApplicationController
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
         format.js {
-          render :json => {:success => true}
+          render :json => {:success => true, :payment_url => payment_url(@registration) }
         }
       else
         format.js {
@@ -48,5 +48,11 @@ class RegistrationsController < ApplicationController
 
   def choose_tumblelog
     @registration = Registration.find(params[:id])
+  end
+
+  private
+
+  def payment_url(registration)
+    AmazonFPS.cobrand_url(registration.amount, "SingleUse", registration.reference, registration.reason, payment_callback_url)
   end
 end

@@ -22,5 +22,10 @@ Tumblrdomains::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  config.to_prepare do
+    AmazonFPS.access_key = "01A0AGCYE9V8P8BJ7T02"
+    AmazonFPS.secret_key = "fVPcyE/vAWnL8xUXv0jwolGAfKsaEZAAzA9hRHna"
+  end
 end
 
