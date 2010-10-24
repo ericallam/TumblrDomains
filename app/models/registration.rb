@@ -15,8 +15,19 @@ class Registration < ActiveRecord::Base
     DomainChanger.handler.new(self.tumblelog, self.email, self.password).change_to(self.domain)
   end
 
+  def register!
+    handler = Registrar.handler.new(self.domain)
+    handler.register!
+    
+    if handler.success?
+      self.update_attribute :dnsimple_id, handler.domain_id
+    end
+
+    handler
+  end
+
   def amount
-    BigDecimal.new("19.95")
+    BigDecimal.new("9.95")
   end
 
   def reference

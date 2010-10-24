@@ -19,7 +19,7 @@ module DomainChanger
       agent.submit(login_form)
 
       customize_page = agent.get("http://www.tumblr.com/customize/#{@blog_name}")
-      customize_form = c.form_with(:action => "http://www.tumblr.com/customize/#{@blog_name}")
+      customize_form = customize_page.form_with(:action => "http://www.tumblr.com/customize/#{@blog_name}")
       customize_form.checkbox_with(:name => 'enable_cname').check
       customize_form.cname = domain_name
 

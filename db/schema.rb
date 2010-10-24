@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101017192542) do
+ActiveRecord::Schema.define(:version => 20101024174332) do
 
   create_table "registrations", :force => true do |t|
     t.string   "domain"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20101017192542) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tumblelog"
+    t.string   "transaction_id"
+    t.integer  "dnsimple_id"
   end
 
 end

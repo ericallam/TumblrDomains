@@ -53,6 +53,6 @@ class RegistrationsController < ApplicationController
   private
 
   def payment_url(registration)
-    AmazonFPS.cobrand_url(registration.amount, "SingleUse", registration.reference, registration.reason, payment_callback_url)
+    AmazonFPS.cobrand_url(registration.amount, "Recurring", registration.reference, registration.reason, payment_callback_url)
   end
 end

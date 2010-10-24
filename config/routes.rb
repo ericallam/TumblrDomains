@@ -14,6 +14,10 @@ Tumblrdomains::Application.routes.draw do
   
   match '/payments/create', :to => 'payments#create', :as => 'payment_callback'
 
+  match '/thank_you', :to => 'payments#thank_you', :as => 'payment_complete'
+  match '/payment_problem', :to => 'payments#problem', :as => 'payment_problem'
+  match '/registration_problem', :to => 'payments#registration_problem', :as => 'registration_problem'
+
   root :to => 'home#index'
 end
 

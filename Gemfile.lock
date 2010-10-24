@@ -1,5 +1,6 @@
 GEM
   remote: http://rubygems.org/
+  remote: http://gems.github.com/
   specs:
     abstract (1.0.0)
     actionmailer (3.0.1)
@@ -32,6 +33,8 @@ GEM
       activesupport (~> 3.0.0)
     builder (2.1.2)
     crack (0.1.8)
+    dnsimple-ruby (0.6.0)
+      httparty
     erubis (2.6.6)
       abstract (>= 1.0.0)
     hpricot (0.8.2)
@@ -84,6 +87,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dnsimple-ruby
+  httparty
   mechanize
   pg
   rails (= 3.0.1)

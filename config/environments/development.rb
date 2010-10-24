@@ -26,6 +26,8 @@ Tumblrdomains::Application.configure do
   config.to_prepare do
     AmazonFPS.access_key = "01A0AGCYE9V8P8BJ7T02"
     AmazonFPS.secret_key = "fVPcyE/vAWnL8xUXv0jwolGAfKsaEZAAzA9hRHna"
+
+    Registrar.handler = Registrar::MockHandler
   end
 end
 
