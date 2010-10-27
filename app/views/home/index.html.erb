@@ -5,13 +5,16 @@
 
     <div class='step_contents'>
       <p class='error' style='display:none'>
-        Sorry, but <span id='domain_name_unavailable'></span> is not available.
       </p>
 
-      <%= form_tag check_availability_path, :method => :get %>
-        <%= text_field_tag :domain_name, 'example.com', :id => 'domain_name' %>
 
-        <%= submit_tag 'Go' %>
+      <%= form_tag check_availability_path, :method => :get %>
+        <%= text_field_tag :domain_name, '', :id => 'domain_name', :placeholder => 'example.com' %>
+
+        <%= image_submit_tag 'go.png', :width => "32px" %>
+        <p class='help'>
+          We only support .com and .net domain names.
+        </p>
       </form>
     </div>
 

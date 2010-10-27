@@ -1,6 +1,10 @@
 module Registrar
   mattr_accessor :handler
 
+  def self.allowable_top_level_domains
+    %w(net com)
+  end
+
   class DNSSimpleHandler
 
     TEMPLATE_NAME = 'tumblr'

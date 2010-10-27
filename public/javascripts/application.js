@@ -12,8 +12,7 @@ $(document).ready(function(){
         $('#step_2 .step_contents').slideDown('fast');
         $('#step_2 input[name="domain"]').val(domain_name);
       }else{
-        $('#step_1 #domain_name_unavailable').html(domain_name);
-        $('#step_1 .error').show();
+        $('#step_1 .error').html(data['error']).show();
       }
     })
 
